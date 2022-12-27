@@ -1,13 +1,15 @@
 <template>
-    <n-card
-    title="📖 如何成功"
-    embedded
-    :bordered="false"
-  >
-    如果你年轻的时候不 996，你什么时候可以 996？你一辈子没有
-    996，你觉得你就很骄傲了？这个世界上，我们每一个人都希望成功，都希望美好生活，都希望被尊重，我请问大家，你不付出超越别人的努力和时间，你怎么能够实现你想要的成功？
-  </n-card>
-    <div class="w-screen h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 absolute left-0 top-0"></div>
+    <div
+        class="w-screen h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 absolute left-0 top-0 flex justify-center items-center"
+    >
+        <n-card class="w-300px sm:w-360px" embedded :bordered="true">
+            <template #footer> #footer </template>
+            <template #action> #action </template>
+            <template #header>
+                <i-line-md:discord class="w-50px h-50px bg-black text-white rounded-full p-10px" />
+            </template>
+        </n-card>
+    </div>
 </template>
 
 <script lang="ts" setup>

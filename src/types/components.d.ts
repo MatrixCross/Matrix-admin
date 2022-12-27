@@ -9,7 +9,9 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
+    ICarbonAccessibility: typeof import('~icons/carbon/accessibility')['default']
     ICustomAvatar: typeof import('~icons/custom/avatar')['default']
+    'ILineMd:discord': typeof import('~icons/line-md/discord')['default']
     IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
     IMdiAlarmOff: typeof import('~icons/mdi/alarm-off')['default']
     IMdiCustomAvatar: typeof import('~icons/mdi/custom-avatar')['default']
