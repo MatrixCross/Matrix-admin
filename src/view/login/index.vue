@@ -44,6 +44,7 @@
                     color="rgb(192, 132, 252)"
                     :circle="true"
                     class="w-full h-10px mt-5px"
+										@click="submit"
                 >
                     登录
                 </n-button>
@@ -53,6 +54,13 @@
 </template>
 
 <script lang="ts" setup>
-let username = ''
-let password = ''
+import { post } from './utils/request'
+let username = ref('')
+let password = ref('')
+
+async function submit() {
+	await post()
+}
+
+
 </script>

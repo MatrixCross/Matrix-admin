@@ -12,7 +12,7 @@ interface ResponseData<T> {
   data: T
 }
 
-const get = <T,>(url: string, params: RequestData = {}, filter?: ResponseHandle): Promise<[any, ResponseData<T> | undefined]> =>
+export const get = <T,>(url: string, params: RequestData = {}, filter?: ResponseHandle): Promise<[any, ResponseData<T> | undefined]> =>
   new Promise((resolve) => {
     axios
       .get(url, { params })
@@ -42,7 +42,7 @@ const get = <T,>(url: string, params: RequestData = {}, filter?: ResponseHandle)
         })
     })
   }
-  
+
   export const put = <T,>(url: string, data: RequestData, params: RequestData = {}): Promise<[any, ResponseData<T> | undefined]> => {
     return new Promise((resolve) => {
       axios
