@@ -7,18 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
-    ICarbonAccessibility: typeof import('~icons/carbon/accessibility')['default']
-    ICustomAvatar: typeof import('~icons/custom/avatar')['default']
     'ILineMd:discord': typeof import('~icons/line-md/discord')['default']
-    IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
-    IMdiAlarmOff: typeof import('~icons/mdi/alarm-off')['default']
-    IMdiCustomAvatar: typeof import('~icons/mdi/custom-avatar')['default']
-    NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
+    NGradientText: typeof import('naive-ui')['NGradientText']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    VanButton: typeof import('vant/es')['Button']
   }
 }
