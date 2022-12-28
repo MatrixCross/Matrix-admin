@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ICarbonAccessibility: typeof import('~icons/carbon/accessibility')['default']
     'ILineMd:coffeeLoop': typeof import('~icons/line-md/coffee-loop')['default']
     'ILineMd:discord': typeof import('~icons/line-md/discord')['default']
     NButton: typeof import('naive-ui')['NButton']
@@ -14,10 +15,7 @@ declare module '@vue/runtime-core' {
     NForm: typeof import('naive-ui')['NForm']
     NFormItem: typeof import('naive-ui')['NFormItem']
     NGradientText: typeof import('naive-ui')['NGradientText']
-    NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
-    NInputNumber: typeof import('naive-ui')['NInputNumber']
-    NSelect: typeof import('naive-ui')['NSelect']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
