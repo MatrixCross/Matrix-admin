@@ -2,7 +2,7 @@
     <div
         class="w-screen h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 absolute left-0 top-0 flex justify-center items-center"
     >
-        <n-card class="w-400px sm:w-460px" embedded :bordered="true">
+        <n-card class="w-300px sm:w-360px" embedded :bordered="true">
             <template #header>
                 <i-line-md:coffee-loop
                     class="w-30px h-30px bg-black text-white rounded-full p-5px box-border"
@@ -30,41 +30,56 @@
                         to: 'rgb(239, 68, 68)',
                     }"
                 >
-                    账密登录
+                    {{ activeModule.label }}
                 </n-gradient-text>
-                <n-form>
-                    <n-form-item label="账号">
-                        <n-input v-model:value="username" clearable />
-                    </n-form-item>
-                    <n-form-item label="密码">
-                        <n-input v-model:value="password" clearable />
-                    </n-form-item>
-                </n-form>
-                <n-button
-                    color="rgb(192, 132, 252)"
-                    :circle="true"
-                    class="w-full h-10px mt-5px"
-										@click="submit"
-                >
-                    登录
-                </n-button>
+
+                <component
+                    :is="activeModule.component"
+                    @activeChange="activeChange"
+                />
             </template>
         </n-card>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { post, get } from '../../../utils/request'
-let username = ref('')
-let password = ref('')
+import type { Component, Ref } from 'vue';
+import { EnumLoginModule } from '../../enum';
+import PwdLogin from './pwdLogin.vue';
+import Register from './register.vue';
 
-async function submit() {
-	const res = await get('http://127.0.0.1:8000/backend/login', {
-		username: username.value,
-		password: password.value
-	})
-	console.log(res)
+interface LoginModule {
+    key: EnumType.LoginModuleKey;
+    label: EnumLoginModule;
+    component: Component;
 }
 
+let activeKey: Ref<EnumType.LoginModuleKey> = ref('pwd-login');
 
+const modules: LoginModule[] = [
+    {
+        key: 'pwd-login',
+        label: EnumLoginModule['pwd-login'],
+        component: PwdLogin,
+    },
+    {
+        key: 'register',
+        label: EnumLoginModule['register'],
+        component: Register,
+    },
+];
+
+const activeModule = computed(() => {
+    // 默认使用账密登录
+    const active: LoginModule = { ...modules[0] };
+    const findItem = modules.find((item) => item.key === activeKey.value);
+    if (findItem) {
+        Object.assign(active, findItem);
+    }
+    return active;
+});
+
+function activeChange(key: EnumType.LoginModuleKey) {
+    activeKey.value = key;
+}
 </script>
