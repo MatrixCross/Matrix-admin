@@ -20,14 +20,22 @@ export default [
     vueJsx(),
     Unocss(),
     AutoImport({
-        include: [
-            /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-            /\.vue$/,
-            /\.vue\?vue/, // .vue
-            /\.md$/, // .md
+        include: [/\.[tj]s?$/, /\.[tj]sx?$/, /\.vue$/],
+        imports: [
+            'vue',
+            'pinia',
+            'vue-router',
+            'vue-i18n',
+            '@vueuse/core',
+            {
+                'naive-ui': [
+                    'useDialog',
+                    'useMessage',
+                    'useNotification',
+                    'useLoadingBar',
+                ],
+            },
         ],
-        resolvers: [],
-        imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core'],
         dts: './src/types/auto-imports.d.ts',
     }),
     Components({

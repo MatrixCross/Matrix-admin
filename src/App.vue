@@ -2,6 +2,8 @@
 
 <template>
     <div>
-        <RouterView />
+        <n-notification-provider>
+            <RouterView />
+        </n-notification-provider>
     </div>
 </template>
