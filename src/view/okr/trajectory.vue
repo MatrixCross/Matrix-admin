@@ -1,3 +1,3 @@
 <template>
-	统计面板
+	行为轨迹
 </template>

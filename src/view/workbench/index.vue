@@ -1,3 +1,3 @@
 <template>
-	统计面板
+	工作台
 </template>

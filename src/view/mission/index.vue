@@ -5,7 +5,7 @@
     >
         <template #extra> </template>
     </n-empty>
-    <div v-else class="w-full h-full flex justify-around">
+    <div v-else class="w-full flex justify-around">
         <n-card
             class="w-33% min-w-250px relative"
             v-for="item in missionList"

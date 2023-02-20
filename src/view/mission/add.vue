@@ -1,5 +1,6 @@
 <template>
-    <n-form>
+		<div class="h-full flex flex-col justify-between">
+			<n-form>
         <n-form-item label="任务名称">
             <n-input v-model:value="formValue.missionname" clearable />
         </n-form-item>
@@ -23,6 +24,7 @@
             提交
         </n-button>
     </div>
+	</div>
 </template>
 
 <script lang="ts" setup>

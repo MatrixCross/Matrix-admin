@@ -14,17 +14,17 @@
         </n-form-item>
     </n-form>
     <n-button
-        color="rgb(192, 132, 252)"
+        color="rgb(37, 23, 73)"
         :circle="true"
-        class="w-full h-10px mt-5px"
+        class="w-full h-16px text-8px mt-5px"
         @click="goToPwdLogin"
     >
         已有账号，马上登录
     </n-button>
     <n-button
-        color="rgb(192, 132, 252)"
+        color="rgb(37, 23, 73)"
         :circle="true"
-        class="w-full h-10px mt-5px"
+        class="w-full h-16px text-8px mt-5px"
         @click="submit"
     >
         注册

@@ -12,9 +12,9 @@
         <span>忘记密码？</span>
     </div>
     <n-button
-        color="rgb(192, 132, 252)"
+        color="rgb(37, 23, 73)"
         :circle="true"
-        class="w-full h-10px mt-5px"
+        class="w-full h-16px text-8px mt-5px"
         @click="submit"
     >
         登录

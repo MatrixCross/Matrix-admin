@@ -1,11 +1,11 @@
 <template>
     <div
-        class="w-screen h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 absolute left-0 top-0 flex justify-center items-center"
+        class="w-screen h-screen bg-gradient-to-r from-white via-gray to-black absolute left-0 top-0 flex justify-center items-center"
     >
         <n-card class="w-300px sm:w-360px" embedded :bordered="true">
             <template #header>
                 <i-line-md:coffee-loop
-                    class="w-30px h-30px bg-black text-white rounded-full p-5px box-border"
+                    class="w-50px h-50px bg-black text-white rounded-full p-5px box-border"
                 />
             </template>
             <template #header-extra>
@@ -13,8 +13,8 @@
                     :size="80"
                     :gradient="{
                         deg: 270,
-                        from: 'rgb(192, 132, 252)',
-                        to: 'rgb(239, 68, 68)',
+                        from: 'rgb(37, 23, 73)',
+                        to: 'rgb(73, 85, 121)',
                     }"
                 >
                     Metu
@@ -26,8 +26,8 @@
                     :size="30"
                     :gradient="{
                         deg: 270,
-                        from: 'rgb(236, 72, 153)',
-                        to: 'rgb(239, 68, 68)',
+                        from: 'rgb(37, 23, 73)',
+                        to: 'rgb(73, 85, 121)',
                     }"
                 >
                     {{ activeModule.label }}
