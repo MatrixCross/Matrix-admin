@@ -19,7 +19,7 @@
         </n-form-item>
     </n-form>
     <div class="w-full flex justify-center items-center">
-        <n-button :circle="true" class="w-50% h-10px mt-5px" @click="submit">
+        <n-button type="info" :circle="true" class="w-80% h-32px text-16px mt-5px" @click="submit">
             提交
         </n-button>
     </div>

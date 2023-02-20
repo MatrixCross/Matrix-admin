@@ -1,6 +1,6 @@
 <template>
     <div
-        class="h-full flex justify-center items-center mr-4px"
+        class="h-full flex justify-center items-center"
         @click="goToRouter"
     >
         <n-avatar
@@ -8,10 +8,10 @@
                 backgroundColor: 'transparent',
             }"
             :src="info.username !== '未登录' ? defaultAvator : logoutAvator"
-            :size="40"
+            :size="30"
         >
         </n-avatar>
-        <span>{{ info.username }}</span>
+        <span class="ml-10px text-16px">{{ info.username }}</span>
     </div>
 </template>
 

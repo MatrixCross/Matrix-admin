@@ -2,11 +2,11 @@
     <n-layout has-sider>
         <div class="flex flex-col min-h-screen justify-between">
             <n-layout-header bordered>
-                <div class="w-screen flex h-22px justify-between items-center">
+                <div class="flex h-60px justify-between items-center border-box px-12px">
                     <div class="flex items-center ml-10px">
-                        <img :src="mainIcon" class="w-20px h-20px" />
+                        <img :src="mainIcon" class="w-40px h-40px" />
                         <n-gradient-text
-                            class="text-8px"
+                            class="text-16px ml-10px"
                             gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"
                         >
                             MatrixCross
@@ -42,7 +42,7 @@
             </div>
 
             <n-layout-footer bordered>
-                <div class="w-screen h-12px flex justify-center items-center">
+                <div class="w-screen h-20px text-10px flex justify-center items-center">
                     {{ footer }}
                 </div>
             </n-layout-footer>
@@ -63,12 +63,16 @@ const activeMenuKey = ref<string>('personal');
 const collapsed = ref(true);
 
 const menuOptions: MenuOption[] = [
+		{
+				label: '工作台',
+				key: 'workbench',
+		},
     {
-        label: '主页',
+        label: '个人主页',
         key: 'personal',
     },
     {
-        label: '任务',
+        label: '任务中心',
         key: 'mission',
         children: [
             {
@@ -81,7 +85,29 @@ const menuOptions: MenuOption[] = [
             },
         ],
     },
-];
+		{
+        label: 'OKR',
+        key: 'OKR',
+				children: [
+            {
+                label: '统计面板',
+                key: 'statistics',
+            },
+            {
+                label: '行为轨迹',
+                key: 'trajectory',
+            },
+						{
+								label: '日程设置',
+								key: 'schedule'
+						}
+        ],
+    },
+		{
+        label: '人工智能',
+        key: 'AI',
+    },
+]
 
 watchEffect(() => {
     router.push(activeMenuKey.value);

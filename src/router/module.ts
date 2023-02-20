@@ -25,6 +25,14 @@ const moduleRoutes: Array<RouteRecordRaw> = [
         },
         component: () => import('@/view/mission/add.vue'),
     },
+		{
+			name: 'addMission',
+			path: '/addMission',
+			meta: {
+					title: '新增任务',
+			},
+			component: () => import('@/view/okr/index.vue'),
+	},
 ];
 
 export default moduleRoutes;

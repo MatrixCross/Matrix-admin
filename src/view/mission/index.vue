@@ -7,19 +7,20 @@
     </n-empty>
     <div v-else class="w-full h-full flex justify-around">
         <n-card
-            class="max-w-100px relative"
+            class="w-33% min-w-250px relative"
             v-for="item in missionList"
             :key="item.id"
         >
             <template #header>
                 <div class="flex justify-between">
-                    <span>{{ item.name }}</span>
-                    <n-countdown
+                    <span class="text-16px">{{ item.name }}</span>
+										<div class="text-16px">
+											<n-countdown
                         :render="renderCountdown"
-                        class="absolute right-0"
                         :duration="getS(item.dealline)"
                         :active="true"
-                    />
+                    	/>
+										</div>
                 </div>
             </template>
 

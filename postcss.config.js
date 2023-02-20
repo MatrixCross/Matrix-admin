@@ -7,7 +7,7 @@ export default {
         autoprefixer(),
         postcsspxtoviewport({
             unitToConvert: 'px', // 需要转换的单位
-            viewportWidth: 375, // 视口宽度，等同于设计稿宽度
+            viewportWidth: 950, // 视口宽度，等同于设计稿宽度
             unitPrecision: 5, // 精确到小数点后几位
             /**
              * 将会被转换的css属性列表，
