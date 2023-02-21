@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     'ILineMd:coffeeLoop': typeof import('~icons/line-md/coffee-loop')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
     NButton: typeof import('naive-ui')['NButton']
+    NCalendar: typeof import('naive-ui')['NCalendar']
     NCard: typeof import('naive-ui')['NCard']
     NCountdown: typeof import('naive-ui')['NCountdown']
     NDatePicker: typeof import('naive-ui')['NDatePicker']
