@@ -2,11 +2,11 @@
     <n-layout has-sider>
         <div class="flex flex-col min-h-screen justify-between">
             <n-layout-header bordered>
-                <div class="flex h-30px justify-between items-center border-box px-12px">
-                    <div class="flex items-center ml-10px">
+                <div class="flex h-46px justify-between items-center box-border px-12px py-20px">
+                    <div class="flex items-center">
                         <img :src="mainIcon" class="w-30px h-30px" />
                         <n-gradient-text
-                            class="text-16px ml-10px"
+                            class="text-16px pl-10px"
                             gradient="linear-gradient(90deg, rgb(73, 85, 121) 0%, rgb(255, 251, 235) 50%, rgb(37, 23, 73) 100%)"
                         >
                             MatrixCross
