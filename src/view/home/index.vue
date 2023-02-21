@@ -55,6 +55,8 @@ import { ref } from 'vue';
 import { MenuOption } from 'naive-ui';
 import identity from './identity.vue';
 import mainIcon from '../../assets/images/main_icon.png';
+import { QueryMission } from '../../api/mission';
+import { userStore, missionStore } from '../../store/collection';
 
 const footer = import.meta.env.VITE_APP_FOOTER;
 const router = useRouter();
@@ -98,7 +100,7 @@ const menuOptions: MenuOption[] = [
                 key: 'trajectory',
             },
 						{
-								label: '日程设置',
+								label: '日程表',
 								key: 'schedule'
 						}
         ],
@@ -108,6 +110,16 @@ const menuOptions: MenuOption[] = [
         key: 'AI',
     },
 ]
+
+userStore.info = JSON.parse(
+    localStorage.getItem('info') ||
+        '{"email":"","phone":"","roleIds":"","userId":0,"username":"未登录"}',
+);
+
+onBeforeMount(async () => {
+    const res = await QueryMission(userStore.info.userId);
+    missionStore.all = res.data.list;
+});
 
 watchEffect(() => {
     router.push(activeMenuKey.value);

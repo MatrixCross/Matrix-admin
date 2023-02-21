@@ -53,7 +53,7 @@ const moduleRoutes: Array<RouteRecordRaw> = [
 			name: 'schedule',
 			path: '/schedule',
 			meta: {
-					title: '日程设置',
+					title: '日程表',
 			},
 			component: () => import('@/view/okr/schedule.vue'),
 		},

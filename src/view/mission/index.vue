@@ -1,14 +1,14 @@
 <template>
     <n-empty
         description="当前没有任何成功部署的任务"
-        v-if="missionList.length === 0"
+        v-if="missionStore.all.length === 0"
     >
         <template #extra> </template>
     </n-empty>
     <div v-else class="w-full flex justify-around">
         <n-card
             class="w-33% min-w-250px relative"
-            v-for="item in missionList"
+            v-for="item in missionStore.all"
             :key="item.id"
         >
             <template #header>
@@ -33,21 +33,8 @@
 </template>
 
 <script lang="ts" setup>
-import { Ref } from 'vue';
-import { QueryMission } from '../../api/mission';
 import router from '../../router';
-
-const missionList: Ref<Array<Mission>> = ref([]);
-
-const info = JSON.parse(
-    localStorage.getItem('info') ||
-        '{"email":"","phone":"","roleIds":"","userId":0,"username":"未登录"}',
-);
-
-onBeforeMount(async () => {
-    const res = await QueryMission(info.userId);
-    missionList.value = res.data.list;
-});
+import { missionStore } from '../../store/collection';
 
 function goToAdd() {
     router.push('addMission');
