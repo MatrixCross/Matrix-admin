@@ -89,21 +89,7 @@ const menuOptions: MenuOption[] = [
     },
 		{
         label: 'OKR',
-        key: 'OKR',
-				children: [
-            {
-                label: '统计面板',
-                key: 'statistics',
-            },
-            {
-                label: '行为轨迹',
-                key: 'trajectory',
-            },
-						{
-								label: '日程表',
-								key: 'schedule'
-						}
-        ],
+        key: 'statistics',
     },
 		{
         label: '人工智能',

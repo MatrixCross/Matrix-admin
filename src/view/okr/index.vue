@@ -1,9 +1,16 @@
 <template>
-	<div id="main" style="width: 600px;height:400px;"></div>
+	<div id="main" class="w-300px h-200px scale-50"></div>
+	<div class="w-200px h-200px scale-50">
+		<Schedule></Schedule>
+	</div>
+	
+	<Trajectory></Trajectory>
 </template>
 
 <script lang="ts" setup>
 import * as echarts from 'echarts';
+import Schedule from './schedule.vue';
+import Trajectory from './trajectory.vue';
 
 onMounted(() => {
 	// 基于准备好的dom，初始化echarts实例

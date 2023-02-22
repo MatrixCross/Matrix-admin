@@ -42,22 +42,6 @@ const moduleRoutes: Array<RouteRecordRaw> = [
 			component: () => import('@/view/okr/index.vue'),
 		},
 		{
-			name: 'trajectory',
-			path: '/trajectory',
-			meta: {
-					title: '行为轨迹',
-			},
-			component: () => import('@/view/okr/trajectory.vue'),
-		},
-		{
-			name: 'schedule',
-			path: '/schedule',
-			meta: {
-					title: '日程表',
-			},
-			component: () => import('@/view/okr/schedule.vue'),
-		},
-		{
 			name: 'AI',
 			path: '/AI',
 			meta: {
