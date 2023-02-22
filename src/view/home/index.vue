@@ -61,7 +61,7 @@ import { userStore, missionStore } from '../../store/collection';
 const footer = import.meta.env.VITE_APP_FOOTER;
 const router = useRouter();
 
-const activeMenuKey = ref<string>('personal');
+const activeMenuKey = ref<string>('workbench');
 const collapsed = ref(true);
 
 const menuOptions: MenuOption[] = [
@@ -102,12 +102,10 @@ userStore.info = JSON.parse(
         '{"email":"","phone":"","roleIds":"","userId":0,"username":"未登录"}',
 );
 
-onBeforeMount(async () => {
-    const res = await QueryMission(userStore.info.userId);
-    missionStore.all = res.data.list;
-});
+missionStore.updateMission()
 
 watchEffect(() => {
     router.push(activeMenuKey.value);
+		missionStore.updateMission()
 });
 </script>

@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { missionStore } from '../../store/collection'
+import { getTodayMission } from '../../../utils/mission/filter'
 
 const missionList = ref<Array<Mission>>([])
 
@@ -43,12 +43,7 @@ const today = ref(Date.now())
 const showModal = ref(false)
 
 function handleUpdateValue(timestamp: number, info: { year: number, month: number, date: number }) {
-	let nextDate = new Date(`${info.year}-${info.month}-${info.date + 1} 00:00:00`);
-	missionList.value = missionStore.all.filter(item => {
-		let createDate = new Date(item.createtime)
-		let deallineDate = new Date(item.dealline)
-		return nextDate >= createDate && nextDate >= deallineDate;
-	})
+	missionList.value = getTodayMission(info);
 	showModal.value = true;
 }
 
