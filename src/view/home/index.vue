@@ -60,8 +60,11 @@ import { userStore, missionStore } from '../../store/collection';
 
 const footer = import.meta.env.VITE_APP_FOOTER;
 const router = useRouter();
+const route = useRoute();
 
-const activeMenuKey = ref<string>('workbench');
+const target = route.fullPath.split('/')[1];
+
+const activeMenuKey = ref<string>(target);
 const collapsed = ref(true);
 
 const menuOptions: MenuOption[] = [

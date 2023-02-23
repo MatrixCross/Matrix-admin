@@ -13,14 +13,16 @@
         >
             <template #header>
                 <div class="flex justify-between">
-                    <span class="text-16px">{{ item.name }}</span>
-										<div class="text-16px">
-											<n-countdown
-                        :render="renderCountdown"
-                        :duration="getS(item.dealline)"
-                        :active="true"
-                    	/>
-										</div>
+                    <span class="text-12px w-100px truncate">{{
+                        item.name
+                    }}</span>
+                    <div class="text-12px">
+                        <n-countdown
+                            :render="renderCountdown"
+                            :duration="getS(item.dealline)"
+                            :active="true"
+                        />
+                    </div>
                 </div>
             </template>
 
@@ -55,10 +57,17 @@ function renderCountdown(e: {
     seconds: number;
     milliseconds: number;
 }) {
-    console.log(e);
     // 计算天数
-    const day = Math.floor(e.hours / 24);
-    const hourLast = e.hours % 24;
-    return `${day}天${hourLast}:${e.minutes}:${e.seconds}`;
+    const day = Math.abs(Math.floor(e.hours / 24));
+    const hourLast = Math.abs(e.hours % 24);
+    return e.hours < 0 || e.minutes < 0 || e.seconds < 0 || e.milliseconds
+        ? `已过期${day}天${hourLast}:${Math.abs(e.minutes)
+              .toString()
+              .padStart(2, '0')}:${Math.abs(e.seconds)
+              .toString()
+              .padStart(2, '0')}`
+        : `${day}天${hourLast}:${e.minutes
+              .toString()
+              .padStart(2, '0')}:${e.seconds.toString().padStart(2, '0')}`;
 }
 </script>

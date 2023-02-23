@@ -33,8 +33,6 @@ declare module '@vue/runtime-core' {
     NRow: typeof import('naive-ui')['NRow']
     NStatistic: typeof import('naive-ui')['NStatistic']
     NTable: typeof import('naive-ui')['NTable']
-    NTimeline: typeof import('naive-ui')['NTimeline']
-    NTimelineItem: typeof import('naive-ui')['NTimelineItem']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
