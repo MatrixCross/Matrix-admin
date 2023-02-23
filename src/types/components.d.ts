@@ -7,13 +7,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    'ILineMd:coffeeLoop': typeof import('~icons/line-md/coffee-loop')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
     NButton: typeof import('naive-ui')['NButton']
     NCalendar: typeof import('naive-ui')['NCalendar']
     NCard: typeof import('naive-ui')['NCard']
     NCol: typeof import('naive-ui')['NCol']
     NCountdown: typeof import('naive-ui')['NCountdown']
-    NDatePicker: typeof import('naive-ui')['NDatePicker']
     NDescriptions: typeof import('naive-ui')['NDescriptions']
     NDescriptionsItem: typeof import('naive-ui')['NDescriptionsItem']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
@@ -21,7 +21,6 @@ declare module '@vue/runtime-core' {
     NForm: typeof import('naive-ui')['NForm']
     NFormItem: typeof import('naive-ui')['NFormItem']
     NGradientText: typeof import('naive-ui')['NGradientText']
-    NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']

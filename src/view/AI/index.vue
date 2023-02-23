@@ -20,9 +20,9 @@
 import { getAIMessages } from '../../api/chatGPT';
 
 const quickQuestions = ref([
-	'分析今天',
-	'分析今月',
-	'分析今年'
+	// '分析今天',
+	// '分析今月',
+	// '分析今年'
 ]);
 
 const customQuestion = ref('');
