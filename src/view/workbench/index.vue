@@ -30,7 +30,9 @@ const dates = getDates();
 const numChartData = ref<Array<number>>([]);
 getNumChartData()
 function getNumChartData() {
-	numChartData.value = dates.map(item => getTodayMission(item).length)
+	numChartData.value = dates.map(item => {
+		getTodayMission(item).length
+	})
 }
 function getDates() {
     let today = new Date(); // 创建一个新的 Date 对象，使用当前时间

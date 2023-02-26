@@ -31,7 +31,7 @@ export async function CreateMission(missionname: string, deadline: string) {
 
 export async function QueryMission(userId: number) {
     const res = await get<{
-        list: Array<Mission>;
+        list: Array<Mission> | null;
         page: number;
         size: number;
         total: number;

@@ -68,6 +68,7 @@ async function submit() {
                 duration: 2500,
                 keepAliveOnHover: true,
             });
+						router.push({ path: '/' });
         } else {
             notification['error']({
                 content: '登录失败',
