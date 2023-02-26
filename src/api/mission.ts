@@ -3,7 +3,7 @@ import { post, get } from '../../utils/request';
 
 const moduleUrl = baseUrl + 'mission/';
 
-export async function CreateMission(missionname: string, deadline: string) {
+export async function CreateMission(missionname: string, deadline: string, detail: string) {
     let info = {
         userId: 0,
         email: '',
@@ -16,6 +16,7 @@ export async function CreateMission(missionname: string, deadline: string) {
     }
     const res = await post<{ id: number }>(moduleUrl + 'create', {
         userId: info.userId,
+				detail: detail,
         missionname: missionname,
         deadline: deadline,
     });
@@ -52,10 +53,12 @@ export async function UpdateMission(
     missionId: number,
     missionname: string,
     deadline: string,
+		status: number,
 ) {
     const res = await post<{ id: number }>(moduleUrl + 'update', {
         missionId: missionId,
         missionName: missionname,
+				status: status,
         deadline: deadline,
     });
 

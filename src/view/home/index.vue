@@ -62,7 +62,7 @@ const footer = import.meta.env.VITE_APP_FOOTER;
 const router = useRouter();
 const route = useRoute();
 
-const target = route.fullPath.split('/')[1];
+const target = route.fullPath.split('/')[1] || 'workbench';
 
 const activeMenuKey = ref<string>(target);
 const collapsed = ref(true);

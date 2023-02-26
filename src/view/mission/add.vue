@@ -43,6 +43,7 @@ async function submit() {
     const res = await CreateMission(
         formValue.value.missionname,
         formValue.value.deadline || '',
+				formValue.value.detail
     );
     if (res.isSuccess) {
         notification['success']({
