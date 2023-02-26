@@ -30,9 +30,11 @@ const dates = getDates();
 const numChartData = ref<Array<number>>([]);
 getNumChartData()
 function getNumChartData() {
-	numChartData.value = dates.map(item => {
+	const arr = dates.map(item => {
 		getTodayMission(item).length
 	})
+
+	numChartData.value = arr as unknown as number[]
 }
 function getDates() {
     let today = new Date(); // 创建一个新的 Date 对象，使用当前时间
@@ -56,7 +58,7 @@ function getDates() {
 // 折现图逻辑
 const lineChartData = ref<Array<number>>([]);
 function getLineChartData() {
-	lineChartData.value = dates.map(item => getTodayMission(item).filter(item => item.status === '1').length)
+	lineChartData.value = dates.map(item => getTodayMission(item).filter((item: { status: string; }) => item.status === '1').length)
 }
 
 // 饼图逻辑

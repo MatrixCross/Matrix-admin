@@ -2,7 +2,7 @@ import { number } from 'echarts';
 import { missionStore } from '../../src/store/collection';
 
 export function getTodayMission(info: { year: number, month: number, date: number }) {
-	if (missionStore.all.length === 0) return [] as number[]
+	if (missionStore.all.length === 0) return []
 	return missionStore.all.filter(item => {
 		return isTaskInDay(item, `${info.year}-${info.month}-${info.date}`)
 	})
