@@ -1,7 +1,7 @@
 import { baseUrl } from './base';
 import { post, get } from '../../utils/request';
 
-const moduleUrl = baseUrl + 'user/';
+const moduleUrl = baseUrl + 'backend/user/';
 const router = useRouter();
 const notification = useNotification();
 

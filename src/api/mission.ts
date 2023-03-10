@@ -1,7 +1,7 @@
 import { baseUrl } from './base';
 import { post, get } from '../../utils/request';
 
-const moduleUrl = baseUrl + 'mission/';
+const moduleUrl = baseUrl + 'backend/mission/';
 
 export async function CreateMission(missionname: string, deadline: string, detail: string) {
     let info = {
